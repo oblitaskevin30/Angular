@@ -1,0 +1,43 @@
+
+<ng-template #heroLoading>
+    <div class="spinner-grow" role="status">
+        <span class="visually-hidden">Loading...</span>
+    </div>
+</ng-template>
+
+<div *ngIf="heroSelected ; else heroLoading " class="container-fluid vh-100 d-flex flex-column">
+    <div class="row">
+        <div class="col-md-6 mb-4 mb-md-0 text-center">
+            <img class="img-fluid rounded shadow" [src]="'/assets/heroesImg/'+ heroSelected.id+'.jpg'" [alt]="heroSelected.superhero">
+        </div>
+        <div class="col-md-6 mb-4 mb-md-0">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">{{heroSelected.superhero}}</h5>
+                    <h6 class="card-subtitle mb-2 text-body-secondary">{{heroSelected.publisher}}</h6>
+                    <p class="card-text">
+                    <strong>Alter Ego:</strong> {{ heroSelected.alter_ego || 'N/A' }}<br>
+                    <strong>Characters:</strong> {{ heroSelected.characters }}
+                    <strong>first Aparition:</strong> {{ heroSelected.first_appearance }}
+    
+                    <div class="d-flex justify-content-end mt-4">
+                        <a  [routerLink]="'/heroes/edit/' + heroSelected.id" class="btn btn-warning btn-sm mx-1">
+                            Edit
+                        </a>
+                        <a  [routerLink]="'/heroes/edit/' + heroSelected.id" class="btn btn-danger btn-sm mx-1">
+                            Delete
+                        </a>
+                        
+                        <button  (click)="goBack()" class="btn btn-success btn-sm mx-1">
+                            Add to car
+                        </button>
+
+                        <button  (click)="goBack()" class="btn btn-secondary btn-sm mx-1">
+                            Back
+                        </button>
+                    </div>
+            </div>
+            <!-- {{ heroSelected | json }} -->
+        </div>
+    </div>
+</div>

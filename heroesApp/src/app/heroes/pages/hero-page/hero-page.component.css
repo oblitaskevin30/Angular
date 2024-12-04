@@ -1,0 +1,12 @@
+.hero-image {
+    max-height: calc(100vh - 60px); /* 100% del viewport menos la altura del navbar */
+    object-fit: contain; /* Ajusta la imagen dentro del espacio disponible */
+    width: 100%; /* Asegura que sea completamente responsiva */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card {
+    max-height: calc(100vh - 60px); /* Misma lógica que la imagen */
+    overflow-y: auto; /* Permite scroll si el contenido es demasiado grande */
+}

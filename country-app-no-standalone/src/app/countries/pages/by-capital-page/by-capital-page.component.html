@@ -1,0 +1,20 @@
+<p>by-capital-page</p>
+<hr>
+<div class="row">
+    <div class="col">
+        <!-- search-box  -->
+        <shared-search-box
+        (onValueDebounce) = "searchByCapital($event)" 
+        placeholder="search by capital "
+        [isLoading] = "isLoading"
+        [initialValueSearchBox]="initialValue"
+        ></shared-search-box>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        <hr>
+        <country-table-component [countries]="countries"  ></country-table-component>
+        
+    </div>
+</div>

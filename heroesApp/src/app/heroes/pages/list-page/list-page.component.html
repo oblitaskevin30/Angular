@@ -1,0 +1,19 @@
+<p>list-page de hero works!</p>
+<div class="container text-center">
+    <div class="row">
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4" *ngFor="let heroe of heroes">
+        <div class="card">
+          <img [src]="heroe| heoreImg " class="card-img-top" [alt]="heroe.superhero"/>
+          <div class="card-body">
+            <h5 class="card-title">{{heroe.superhero}}</h5>
+            <p class="card-text">{{heroe.characters}}</p>
+            <hr>
+            <button [routerLink]="['/heroes',heroe.id]" class="btn btn-primary">more</button>
+            <button [routerLink]="['/heroes/edit',heroe.id]" class="btn btn-primary mx-2">Edit</button>
+            <button [routerLink]="['/heroes/edit',heroe.id]" class="btn btn-danger">Delete</button>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

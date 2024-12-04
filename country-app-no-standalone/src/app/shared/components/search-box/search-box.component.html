@@ -1,0 +1,22 @@
+<!-- (keyup.enter)="emitValue(txtInput.value)" -->
+<div class="row d-flex justify-content-center align-items-center">
+    <div class="col d-flex justify-content-center align-items-center">
+        <label for="search-box"
+        class="p-2"
+        >Search</label>
+        <input
+        id="search-box"
+        type="text" 
+        [placeholder]="placeholder"
+        (keyup)="onKeyUp(txtInput.value)"
+        class="form-control"
+        [value]="initialValueSearchBox"
+        #txtInput
+        >
+    </div>
+    <div *ngIf="isLoading"  class="col d-flex justify-content-center align-items-center">
+        <shared-loading-spinner></shared-loading-spinner>
+    </div>
+</div>
+
+

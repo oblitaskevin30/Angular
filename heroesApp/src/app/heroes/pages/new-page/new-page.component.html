@@ -1,0 +1,63 @@
+
+<div class="container-fluid vh-100 d-flex flex-column">
+    <div class="row flex-grow-1">
+        
+        <div class="col-md-12 d-flex justify-content-center align-items-center bg-light p-4">
+            
+            <form class="w-75" [formGroup] = "heroForm" autocomplete="off" (ngSubmit)="onSave()" >
+                <h3 class="mb-4"><strong>Formulario</strong></h3>
+                <div class="mb-3">
+                    <label for="name" class="form-label">Hero Name</label>
+                    <input 
+                    type="text" 
+                    class="form-control" 
+                    required 
+                    id="name" 
+                    placeholder="Hero's name"
+                    formControlName ="superhero"
+                    >
+                </div>
+                <div class="mb-3">
+                    <label for="publisher" class="form-label">Publisher</label>
+                    <input type="text" class="form-control" formControlName ="publisher" required id="publisher" placeholder="publisher">
+                </div>
+                <div class="mb-3">
+                    <label for="alter" class="form-label">Alter Ego</label>
+                    <input type="text" 
+                    formControlName = "alter_ego"
+                    class="form-control" id="alter" placeholder="Alter Ego">
+                </div>
+                <div class="mb-3">
+                    <label for="aparition" class="form-label">First Aparition</label>
+                    <input type="text" 
+                    formControlName = "first_appearancnew"
+                    class="form-control" id="aparition" placeholder="">
+                </div>    
+                <div class="mb-3">
+                    <label for="creator" class="form-label">Characters</label>
+                    <input type="text"
+                    formControlName = "characters"
+                    class="form-control" id="creator" placeholder="">
+                </div>
+                <div class="col-md-6 d-flex justify-content-center align-items-center bg-secondary p-4">
+                    <div class="text-center">
+                        <label for="imageInput" class="form-label text-white">Subir Imagen</label>
+                        <input type="file"
+                        formControlName = "alt_img"
+                        id="imageInput" class="form-control">
+                        <div class="mt-3">
+                            <img id="preview" src="https://via.placeholder.com/300" alt="Vista previa" class="img-fluid rounded shadow">
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-end mt-4">
+                    <button type="button" class="btn btn-danger w-75">Clear</button>
+                    <button type="submit" class="btn btn-success w-75">save</button>
+                </div>
+            </form>
+        </div>
+        
+        
+    </div>
+</div>
+
