@@ -1,18 +1,38 @@
-<p>list-page de hero works!</p>
+
 <div class="container text-center">
     <div class="row">
       <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4" *ngFor="let heroe of heroes">
         <div class="card">
-          <img [src]="heroe| heoreImg " class="card-img-top" [alt]="heroe.superhero"/>
+          <img [src]="heroe | heoreImg" class="card-img-top"
+          
+          [width]="250"
+          [height]="250"
+          
+          [alt]="heroe.superhero"/>
           <div class="card-body">
             <h5 class="card-title">{{heroe.superhero}}</h5>
             <p class="card-text">{{heroe.characters}}</p>
             <hr>
             <button [routerLink]="['/heroes',heroe.id]" class="btn btn-primary">more</button>
             <button [routerLink]="['/heroes/edit',heroe.id]" class="btn btn-primary mx-2">Edit</button>
-            <button [routerLink]="['/heroes/edit',heroe.id]" class="btn btn-danger">Delete</button>
-            
+            <button data-toggle="modal" data-target="#exampleModalCenter" (click)="confirmDelete(heroe.id)" class="btn btn-danger">Delete</button>
           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+        </div>
+        <div class="modal-body">
+            {{message}}
+        </div>
+        <div class="modal-footer">
+          <button type="button" [routerLink]="['/heroes']" (click)="onDelete()" data-dismiss="modal" class="btn btn-primary">Delete</button>
         </div>
       </div>
     </div>

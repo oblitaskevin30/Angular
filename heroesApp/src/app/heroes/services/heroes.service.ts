@@ -26,7 +26,9 @@ export class HeroService {
                 error => of(undefined))
         );
     }
+
     public addHero(hero : Hero):Observable<Hero>{
+        
         return this.httpClient.post<Hero>(`${this.baseUrl}/heroes`,hero);
     }
 

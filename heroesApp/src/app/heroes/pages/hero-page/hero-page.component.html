@@ -8,7 +8,7 @@
 <div *ngIf="heroSelected ; else heroLoading " class="container-fluid vh-100 d-flex flex-column">
     <div class="row">
         <div class="col-md-6 mb-4 mb-md-0 text-center">
-            <img class="img-fluid rounded shadow" [src]="'/assets/heroesImg/'+ heroSelected.id+'.jpg'" [alt]="heroSelected.superhero">
+            <img class="img-fluid rounded shadow" [src]="heroSelected | heoreImg" [alt]="heroSelected.superhero">
         </div>
         <div class="col-md-6 mb-4 mb-md-0">
             <div class="card">
