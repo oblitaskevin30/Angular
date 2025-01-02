@@ -9,11 +9,12 @@
   "heroes": [
     {
       "id": "dc-wonder",
-      "superhero": "Wonder Woman",
+      "superhero": "Wonder Woman edited",
       "publisher": "DC Comics",
       "alter_ego": "Princess Diana",
       "first_appearance": "All Star Comics #8",
-      "characters": "Princess Diana"
+      "characters": "Princess Diana",
+      "alt_img": null
     },
     {
       "id": "dc-martian",
@@ -22,14 +23,6 @@
       "alter_ego": "J\"onn J\"onzz",
       "first_appearance": "Detective Comics #225",
       "characters": "Martian Manhunter"
-    },
-    {
-      "id": "dc-robin",
-      "superhero": "Robin/Nightwing",
-      "publisher": "DC Comics",
-      "alter_ego": "Dick Grayson",
-      "first_appearance": "Detective Comics #38",
-      "characters": "Dick Grayson"
     },
     {
       "id": "dc-blue",

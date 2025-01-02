@@ -24,7 +24,8 @@
           </li>
         </ul>
       </div>
-      <a class="btn" routerLink="/heroes/list">Close</a>
+      <span>{{getUser?.email}}</span>
+      <a class="btn" (click)="onLogout()"  routerLink="/heroes/list">Close</a>
       
     </div>
 </nav>
