@@ -1,0 +1,128 @@
+<div class="d-flex justify-content-center align-items-center mt-5" >
+  <form (ngSubmit)="postCar()" [formGroup]="postCarForm" class="bg-dark p-4 w-75 text-light">
+    <h2 class="form-group m-2 fw-bold text-center">Post Car</h2>
+  
+    <div class="row">
+      <!-- Columna 1 (Para Desktop, ocupando 6 columnas) -->
+      <div class="col-lg-6 col-12">
+      
+        <!-- Previsualización de la imagen -->
+        <div *ngIf="imagePreview" class="form-group m-2">
+          <label for="imagePreview" class="text-white">Image Preview</label>
+          <img [src]="imagePreview" alt="Image Preview" class="img-fluid rounded">
+        </div>
+        
+        <!-- Cargar imagen -->
+        <div class="form-group m-2">
+          <label for="image" class="text-white">Upload Image</label>
+          <input 
+            type="file"
+            accept="image/x-png,image/gif,image/jpg" 
+            class="form-control bg-dark text-light border-light" 
+            id="image" 
+            (change)="onImageChange($event)">
+        </div>
+
+        <!-- Marca -->
+        <div class="form-group m-2">
+          <label for="brand" class="text-white">Brand</label>
+          <select 
+            formControlName="brand" 
+            class="form-select bg-dark text-light border-light"
+            id="brand">
+            <option value="" disabled selected>Select a brand</option> <!-- Placeholder -->
+            <option *ngFor="let brand of listOfBrands" [value]="brand">{{ brand }}</option>
+          </select>
+        </div>
+
+        <!-- Nombre del coche -->
+        <div class="form-group m-2">
+          <label for="name" class="text-white">Car Name</label>
+          <input 
+            formControlName="name"
+            type="text" 
+            class="form-control bg-dark text-light border-light"
+            id="name" 
+            placeholder="Enter car name">
+        </div>
+
+        <!-- Tipo de combustible -->
+        <div class="form-group m-2">
+          <label for="type" class="text-white">Type</label>
+          <select 
+            formControlName="type" 
+            class="form-select bg-dark text-light border-light"
+            id="type">
+            <option value="" disabled selected>Select car type</option> <!-- Placeholder -->
+            <option *ngFor="let type of listOfType" [value]="type">{{ type }}</option>
+          </select>
+        </div>
+        
+      </div>
+
+      <!-- Columna 2 (Para Desktop, ocupando 6 columnas) -->
+      <div class="col-lg-6 col-12">
+        
+        <!-- Transmisión -->
+        <div class="form-group m-2">
+          <label for="transmission" class="text-white">Transmission</label>
+          <select 
+            formControlName="transmission" 
+            class="form-select bg-dark text-light border-light"
+            id="transmission">
+            <option value="" disabled selected>Select transmission type</option> <!-- Placeholder -->
+            <option *ngFor="let transmission of listOfTransmission" [value]="transmission">{{ transmission }}</option>
+          </select>
+        </div>
+
+        <!-- Color -->
+        <div class="form-group m-2">
+          <label for="color" class="text-white">Color</label>
+          <select 
+            formControlName="color" 
+            class="form-select bg-dark text-light border-light"
+            id="color">
+            <option value="" disabled selected>Select car color</option> <!-- Placeholder -->
+            <option *ngFor="let color of listOfColor" [value]="color">{{ color }}</option>
+          </select>
+        </div>
+
+        <!-- Año -->
+        <div class="form-group m-2">
+          <label for="year" class="text-white">Year</label>
+          <input 
+            formControlName="year"
+            type="date" 
+            class="form-control bg-dark text-light border-light"
+            id="year" 
+            placeholder="Enter year">
+        </div>
+
+        <!-- Descripción -->
+        <div class="form-group m-2">
+          <label for="description" class="text-white">Description</label>
+          <textarea 
+            formControlName="description"
+            class="form-control bg-dark text-light border-light" 
+            id="description" 
+            placeholder="Enter car description"></textarea>
+        </div>
+
+        <!-- Precio -->
+        <div class="form-group m-2">
+          <label for="price" class="text-white">Price</label>
+          <input 
+            formControlName="price"
+            type="number" 
+            class="form-control bg-dark text-light border-light"
+            id="price" 
+            placeholder="Enter car price">
+        </div>
+
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary m-2">Submit</button>
+
+  </form>
+</div>
